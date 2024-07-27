@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\Auth\PostController;
 use App\Http\Controllers\auth\TagController;
 use App\Http\Controllers\site\BlogController;
+use App\Http\Controllers\site\CommentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,13 @@ Route::get('auth/tags', [TagController::class, 'openTagsPage'])->name('auth.tags
 Route::get('/', [BlogController::class, 'index'])->name('index');
 
 Route::get('/{id}', [BlogController::class,'singleBlog'])->name('singleblog');
+
+
+Route::middleware(['web'])->group(function () {
+    Route::post('post/comment/{postId}', [CommentController::class, 'postComment'])->name('comments.store');
+});
+
+// Route::post('comment/reply/{commentId}',[CommentController::class, 'postComment']->name('post.comment'));
 
 
 
