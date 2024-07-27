@@ -120,7 +120,7 @@
                                         <span>{{$comment->user ? $comment->user->email: ''}}</span>
 
                                         <div class="comment-meta mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
-                                            <a href="#"><i class="icofont-reply mr-2 text-muted"></i>Reply |</a>
+                                            <a class="reply-btn" href="javascript:void(0)"><i class="icofont-reply mr-2 text-muted"></i>Reply |</a>
                                             <span class="date-comm">Posted {{$comment->user ? date('d M y', strtotime($comment->user->created_at)):''}}</span>
                                         </div>
 
@@ -129,8 +129,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <textarea name="comment" id="comment" class="form-control" cols="20" rows="3"></textarea>
+                                    <div class="form-group comment-reply">
+                                        <textarea name="comment" id="comment" class="form-control" cols="20" rows="2"></textarea>
                                         <button type="submit"
                                             class=" mt-2 float-right btn btn-main btn btn-sm">Reply</button>
                                     </div>
@@ -205,3 +205,16 @@
         <h3 class="text-danger text-center mt-5">Unable to locate the blog, please go back and try again.</h3>
     @endif
 @endsection
+
+@section('scripts')
+<script>
+   $(document).ready(function() {
+       $('.comment-reply').hide();
+                        
+       $('.reply-btn').click(function() {
+           $(this).closest('li').find('.comment-reply').toggle();
+       });
+   });
+</script>
+@endsection
+

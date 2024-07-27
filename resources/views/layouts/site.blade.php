@@ -186,6 +186,8 @@ Essential Scripts
 
 <script src="{'assets/site/js/script.js'}}"></script>
 
+@yield('scripts')
+
 </body>
 
 </html>
