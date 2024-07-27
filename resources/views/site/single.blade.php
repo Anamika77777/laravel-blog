@@ -121,14 +121,11 @@
 
                                         <div class="comment-meta mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
                                             <a href="#"><i class="icofont-reply mr-2 text-muted"></i>Reply |</a>
-                                            <span class="date-comm">Posted October 7, 2018 </span>
+                                            <span class="date-comm">Posted {{$comment->user ? date('d M y', strtotime($comment->user->created_at)):''}}</span>
                                         </div>
 
                                         <div class="comment-content mt-3">
-                                            <p>Some consultants are employed indirectly by the client via a consultancy
-                                                staffing company, a company that provides consultants on an agency
-                                                basis.
-                                            </p>
+                                            <p>{{$comment ? $comment->comment: ''}}</p>
                                         </div>
                                     </div>
 
