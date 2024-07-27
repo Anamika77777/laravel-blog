@@ -36,7 +36,7 @@
                                         <div class="blog-item-meta bg-gray pt-2 pb-1 px-3">
                                             <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>
                                                 {{ date('d-M-y', strtotime($blog->created_at)) }}</span>
-                                            <span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>5
+                                            <span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i>{{count($comments)}}
                                                 Comments</span>
                                         </div>
                                         <h2 class="mt-3 mb-4">{{ $blog->title }}</h2>
