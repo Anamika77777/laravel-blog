@@ -67,6 +67,16 @@
                             @endif
 
                             <div class="col-lg-12 mb-5">
+                            @if (Session::has('alert-success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Success!</strong> {{Session::get('alert-success')}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                            @endif
+                            
+
                                 <form method="post" action="{{ route('comments.store', $blog->id) }}">
                                     @csrf
                                     <div class="contact-form bg-white rounded p-5" id="comment-form">

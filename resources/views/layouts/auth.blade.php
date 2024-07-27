@@ -15,7 +15,7 @@
     <link href="{{ asset('assets/auth/plugins/material/css/materialdesignicons.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/auth/plugins/simplebar/simplebar.css') }}" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/bootstrap-icons.svg" />
-    
+
 
 
     <!-- PLUGINS CSS STYLE -->
@@ -54,7 +54,7 @@
             <div id="sidebar" class="sidebar sidebar-with-footer">
                 <!-- Aplication Brand -->
                 <div class="app-brand">
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{ route('dashboard') }}">
                         <img src="{{ asset('assets/auth/images/logo.png') }}" alt="Mono">
                         <span class="brand-name">Auth Dashboard</span>
                     </a>
@@ -65,7 +65,7 @@
                     <ul class="nav sidebar-inner" id="sidebar-menu">
 
                         <li class="active">
-                            <a class="sidenav-item-link" href="{{route('dashboard')}}">
+                            <a class="sidenav-item-link" href="{{ route('dashboard') }}">
                                 <i class="mdi mdi-briefcase-account-outline"></i>
                                 <span class="nav-text">Dashboard</span>
                             </a>
@@ -102,14 +102,14 @@
 
 
                                     <li>
-                                        <a class="sidenav-item-link" href="{{route('post.create')}}">
+                                        <a class="sidenav-item-link" href="{{ route('post.create') }}">
                                             <span class="nav-text">Create Post</span>
 
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="sidenav-item-link" href="{{route('post.index')}}">
+                                        <a class="sidenav-item-link" href="{{ route('post.index') }}">
                                             <span class="nav-text">Post</span>
 
                                         </a>
@@ -136,13 +136,13 @@
 
                     <div class="navbar-right ">
                         <ul class="nav navbar-nav">
-                         
+
                             <!-- User Account -->
                             <li class="dropdown user-menu">
                                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <img src="{{ asset('assets/auth/images/user/user-xs-01.jpg') }}"
                                         class="user-image rounded-circle" alt="User Image" />
-                                    <span class="d-none d-lg-inline-block">{{auth()->user()->name}}</span>
+                                    <span class="d-none d-lg-inline-block">{{ auth()->user()->name }}</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li>
@@ -171,11 +171,14 @@
                                     </li>
 
                                     <li class="dropdown-footer">
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                             @csrf
-                                            <a href="{{ route('logout') }}" onclick=
+                                            <a href="{{ route('logout') }}"
+                                                onclick=
                                             "event.preventDefault();
-             document.getElementById('logout-form').submit();" id="logut-button" class="dropdown-link-item" > <i class="mdi mdi-logout"></i> Log Out </a>
+                                             document.getElementById('logout-form').submit();"
+                                                id="logut-button" class="dropdown-link-item"> <i
+                                                    class="mdi mdi-logout"></i> Log Out </a>
                                         </form>
                                     </li>
                                 </ul>
@@ -247,7 +250,7 @@
     <script src="{{ asset('assets/auth/js/chart.js') }}"></script>
     <script src="{{ asset('assets/auth/js/map.js') }}"></script>
     <script src="{{ asset('assets/auth/js/custom.js') }}"></script>
-        @yield('scripts')
+    @yield('scripts')
 
     <script>
         // $(document).ready(function() {
@@ -257,7 +260,6 @@
         //         $('#logout-form').submit();
         //     });
         // });
-
     </script>
 
 
