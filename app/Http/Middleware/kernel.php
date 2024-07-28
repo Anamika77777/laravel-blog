@@ -4,17 +4,27 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Http\Middleware\AdminAuth;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\HttpKernel;
 
-class kernel
+class Kernel extends HttpKernel
 {
+    // Other properties and methods...
+
     /**
-     * Handle an incoming request.
+     * The application's route middleware.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
      */
-    public function handle(Request $request, Closure $next): Response
-    {
-        return $next($request);
-    }
+    protected $routeMiddleware = [
+        // Other middleware...
+        // 'auth' => \App\Http\Middleware\Authenticate::class,
+        'admin.auth' => \App\Http\Middleware\AdminAuth::class,
+        // More middleware...
+    ];
+
+    // Other properties and methods...
 }

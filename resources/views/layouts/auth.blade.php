@@ -56,7 +56,7 @@
                 <div class="app-brand">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{ asset('assets/auth/images/logo.png') }}" alt="Mono">
-                        <span class="brand-name">Auth Dashboard</span>
+                        <span class="brand-name">Dashboard</span>
                     </a>
                 </div>
                 <!-- begin sidebar scrollbar -->
@@ -108,12 +108,12 @@
                                         </a>
                                     </li>
 
-                                    <li>
+                                    {{-- <li>
                                         <a class="sidenav-item-link" href="{{ route('post.index') }}">
                                             <span class="nav-text">Post</span>
 
                                         </a>
-                                    </li>
+                                    </li> --}}
 
                                 </div>
                             </ul>

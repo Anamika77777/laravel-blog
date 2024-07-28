@@ -1,5 +1,5 @@
-{{-- @extends('layouts.auth')
-@section('title','Admin Dashboard')
+@extends('layouts.auth')
+@section('title','Dashboard')
 
 @section('content')
 
@@ -10,7 +10,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card" style="height: 160px">
                   <div class="card-header">
-                    <h2>{{$PostsCount}}</h2>
+                    {{-- <h2>{{$PostsCount}}</h2> --}}
                     
                     <div class="sub-title">
                       <span class="mr-1">Post</span> <i class="fa-regular fa-address-card"></i>
@@ -21,7 +21,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    <h2>{{$TagsCount}}</h2>
+                    {{-- <h2>{{$TagsCount}}</h2> --}}
                     
                     <div class="sub-title">
                       <span class="mr-1">Tags</span> 
@@ -32,7 +32,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    <h2>{{$CategoriesCount}}</h2>
+                    {{-- <h2>{{$CategoriesCount}}</h2> --}}
                     
                     <div class="sub-title">
                       <span class="mr-1">Categories</span> 
@@ -43,7 +43,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    <h2>{{$UsersCount}}</h2>
+                    {{-- <h2>{{$UsersCount}}</h2> --}}
                     
                     <div class="sub-title">
                       <span class="mr-1">Users</span> 
@@ -180,20 +180,4 @@
           </div>
         </div>
 </div>
-@endsection --}}
-
-
-
-
-{{-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Dashboard</title>
-    <!-- Add any necessary stylesheets and scripts here -->
-</head>
-<body>
-    <h1>Welcome to Admin Dashboard</h1>
-    <p>Hello, {{ Auth::guard('admin')->user()->name }}!</p>
-    <p>Your email is: {{ Auth::guard('admin')->user()->email }}</p>
-</body>
-</html> --}}
+@endsection
