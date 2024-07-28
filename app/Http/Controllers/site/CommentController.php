@@ -4,6 +4,7 @@ namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
 use App\Models\comment;
+use App\Models\comment_replies;
 use App\Models\post;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,7 @@ class CommentController extends Controller
            'comment'=>$request->comment,
         ]);
 
-        $request->session()->flash('alert-success', 'Comment added successfully, it will be visible after admin approval');
+        $request->session()->flash('alert-success', 'Comment added successfully');
     }
     return back();
 

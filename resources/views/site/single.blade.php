@@ -129,10 +129,22 @@
                                         </div>
                                     </div>
 
+                                    <div class="ml-5">
+                                        @if ($comment->commentReplies)
+                                            @foreach ($comment->commentReplies as $reply)
+                                                <p>{{$reply->comment}}</p>
+                                            @endforeach
+                                        @endif
+                                    </div>
+
                                     <div class="form-group comment-reply">
-                                        <textarea name="comment" id="comment" class="form-control" cols="20" rows="2"></textarea>
+                                        <form action="{{route('comments.reply', $comment->id)}}" method="POST">
+                                            @csrf
+                                         
+                                            <textarea name="comment" id="comment" class="form-control" cols="20" rows="2"></textarea>
                                         <button type="submit"
                                             class=" mt-2 float-right btn btn-main btn btn-sm">Reply</button>
+                                        </form>
                                     </div>
                                 </li>
                                    @endforeach

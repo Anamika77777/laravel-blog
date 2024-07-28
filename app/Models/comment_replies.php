@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class comment_replies extends Model
 {
     use HasFactory;
-    protected $fillable = ['post_id','comment_id','comment'];
+    protected $fillable = ['user_id','comment_id','comment'];
 
 }
