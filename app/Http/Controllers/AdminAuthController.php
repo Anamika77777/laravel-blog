@@ -28,6 +28,42 @@ class AdminAuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('admin.login')->with('success', 'Registration successful. Please login.');
+        return redirect()->route('admin.dashboard')->with('success', 'Registration successful. Please login.');
+    }
+
+
+
+
+    public function showLoginForm()
+    {
+        return view('admin.login');
+    }
+
+    public function login(Request $request)
+    {
+        // Validate the login form data
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+        ]);
+
+        // Attempt to log the admin in
+        if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
+            // If successful, redirect to the admin dashboard
+            return redirect()->route('admin.dashboard');
+        }
+
+        // If unsuccessful, redirect back to the login form with an error message
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+
+        return redirect()->route('admin.login')->with('success', 'You have been logged out.');
     }
 }
+

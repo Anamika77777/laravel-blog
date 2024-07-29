@@ -14,6 +14,6 @@ class AdminController extends Controller
     public function dashboard()
     {
         // Pass any necessary data to the view
-        return view('auth.dashboard');
+        return view('admin.dashboard');
     }
 }

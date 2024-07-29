@@ -14,13 +14,17 @@ class AdminAuth
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard = 'admin')
     {
-        if (!Auth::guard('admin')->check()) {
+        if (!Auth::guard($guard)->check()) {
             return redirect()->route('admin.login');
         }
+    
         return $next($request);
     }
+
+
+    
 }
     
 
