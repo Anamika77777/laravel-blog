@@ -19,6 +19,6 @@ class DashboardController extends Controller
         $CategoriesCount = category::count();
         $UsersCount = User::count();
 
-        return view('auth.dashboard', compact('PostsCount', 'TagsCount', 'CategoriesCount', 'UsersCount'));
+        return view('user.dashboard', compact('PostsCount', 'TagsCount', 'CategoriesCount', 'UsersCount'));
     }
 }

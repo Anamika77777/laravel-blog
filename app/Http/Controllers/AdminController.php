@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -11,9 +12,11 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function dashboard()
     {
-        // Pass any necessary data to the view
+
         return view('admin.dashboard');
+
     }
 }
