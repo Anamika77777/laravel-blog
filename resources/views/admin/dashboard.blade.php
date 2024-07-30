@@ -8,7 +8,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card" style="height: 160px">
                   <div class="card-header">
-                    {{-- <h2>{{$PostsCount}}</h2> --}}
+                    <h2>{{$PostsCount}}</h2>
                     
                     <div class="sub-title">
                       <span class="mr-1">Post</span> <i class="fa-regular fa-address-card"></i>
@@ -19,7 +19,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    {{-- <h2>{{$TagsCount}}</h2> --}}
+                    <h2>{{$TagsCount}}</h2>
                     
                     <div class="sub-title">
                       <span class="mr-1">Tags</span> 
@@ -30,7 +30,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    {{-- <h2>{{$CategoriesCount}}</h2> --}}
+                    <h2>{{$CategoriesCount}}</h2>
                     
                     <div class="sub-title">
                       <span class="mr-1">Categories</span> 
@@ -41,7 +41,7 @@
               <div class="col-xl-3 col-sm-6">
                 <div class="card card-default card"style="height: 160px">
                   <div class="card-header">
-                    {{-- <h2>{{$UsersCount}}</h2> --}}
+                    <h2>{{$UsersCount}}</h2>
                     
                     <div class="sub-title">
                       <span class="mr-1">Users</span> 

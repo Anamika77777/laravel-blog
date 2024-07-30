@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function index(){
         
-        $blogs = post::all();
+        $blogs = post::where('status','=','1')->get();
 
         return view('site.index', compact('blogs'));
     }

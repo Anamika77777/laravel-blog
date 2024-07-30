@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Edit Post | Admin Dashboard')
+@section('title', 'Edit Post | Dashboard')
 
 @section('styles')
 
@@ -47,8 +47,8 @@
                             <label>Status</label>
                             <select name="status" class="form-control">
                                 <option value="" disabled selected>Choose Option</option>
-                                <option @selected(old('status', $post->status)==1) value="1">Publish</option>
-                                <option @selected(old('status', $post->status)==0) value="1" value="0">Draft</option>
+                               
+                                <option @selected(old('status', $post->status)==0) value="0">Draft</option>
                             </select>
                         </div>
 

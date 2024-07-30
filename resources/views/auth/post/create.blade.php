@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Create Post | Admin Dashboard')
+@section('title', 'Create Post | Dashboard')
 
 @section('styles')
 
@@ -9,14 +9,10 @@
 @section('content')
     <div class="content-wrapper">
         <div class="content">
-
-
             <!-- Masked Input -->
             <div class="card card-default">
                 <div class="card-header">
                     <h2>Create Post</h2>
-
-
                 </div>
                 <div class="card-body">
                     @if ($errors->any())
@@ -45,7 +41,6 @@
                             <label>Status</label>
                             <select name="status" class="form-control">
                                 <option value="" disabled selected>Choose Option</option>
-                                <option value="1">Publish</option>
                                 <option value="0">Draft</option>
                             </select>
                         </div>

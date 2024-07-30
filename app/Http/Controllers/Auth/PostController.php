@@ -62,7 +62,7 @@ namespace App\Http\Controllers\Auth;
                       'description' => $request->description,
                       'status' => $request->status,
                       'category_id' => $request->category,
-
+                      'status' => 0,
                   ]);
 
               foreach ($request->tags as $tag) {

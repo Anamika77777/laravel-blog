@@ -96,14 +96,9 @@ class AdminPostController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdateRequest $request, Post $post)
-{
-    try {
-        DB::beginTransaction();
-
-        // Handle file upload
+    {
         if ($file = $request->file('file')) {
             $imageName = null;
-
             if ($post->gallery) {
                 $imageName = $post->gallery->image;
                 $imagePath = public_path('storage/auth/posts/');
@@ -111,40 +106,30 @@ class AdminPostController extends Controller
                 if (file_exists($imagePath . $imageName)) {
                     unlink($imagePath . $imageName);
                 }
-
-                $fileName = $this->uploadFile($file);
-
-                $post->gallery->update([
-                    'image' => $fileName
-                ]);
-            } else {
-                $fileName = $this->uploadFile($file);
-                $gallery = $this->storeImage($fileName);
-                $post->gallery_id = $gallery->id;
             }
+
+            $fileName = $this->uploadFile($file);
+
+            $post->gallery->update([
+                'image' => $fileName
+            ]);
         }
 
-        // Update post
         $post->update([
-            'user_id' => Auth::guard('admin')->user()->id,
+            'user_id' => Auth::guard('guardName')('admin')->user()->id,
             'title' => $request->title,
             'description' => $request->description,
             'status' => $request->status,
             'category_id' => $request->category,
         ]);
 
-        // Sync tags
-        $post->tags()->sync($request->tags);
+        foreach ($request->tags as $tag) {
+            $post->tags()->attach($tag);
+        }
 
-        DB::commit();
         Session::flash('alert-success', 'Post updated successfully!');
-        return redirect()->route('admin.post.index');
-    } catch (\Exception $ex) {
-        DB::rollBack();
-        return back()->withErrors($ex->getMessage());
+        return to_route('admin.post.index');
     }
-}
-
 
     /**
      * Remove the specified resource from storage.

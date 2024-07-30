@@ -92,7 +92,12 @@
 
                                         </a>
                                     </li>
-
+                                    <li>
+                                        <a class="sidenav-item-link" href="{{ route('post.index') }}">
+                                            <span class="nav-text">Post</span>
+                                
+                                        </a>
+                                    </li>
                                    
 
                                 </div>
