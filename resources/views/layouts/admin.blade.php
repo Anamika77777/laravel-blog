@@ -25,6 +25,7 @@
     <!-- FAVICON -->
     <link href="{{ asset('assets/auth/images/favicon.png') }}" rel="shortcut icon" />
     <script src="{{ asset('assets/auth/plugins/nprogress/nprogress.js') }}"></script>
+    @yield('styles')
 </head>
 
 <body class="navbar-fixed sidebar-fixed" id="body">
@@ -58,14 +59,14 @@
                         </li>
 
                         <li>
-                            <a class="sidenav-item-link" href="{{ route('auth.categories') }}">
+                            <a class="sidenav-item-link" href="{{ route('admin.categories') }}">
                                 <i class="fa-solid fa-tasks"></i>
                                 <span class="nav-text">Categories</span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="sidenav-item-link" href="{{ route('auth.tags') }}">
+                            <a class="sidenav-item-link" href="{{ route('admin.tags') }}">
                                 <i class="fa-solid fa-tags"></i>
                                 <span class="nav-text">Tags</span>
                             </a>
@@ -198,6 +199,8 @@
         <script>
             NProgress.done();
         </script>
+
+        @yield('scripts')
     </body>
     
     </html>

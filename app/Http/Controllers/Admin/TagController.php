@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\auth;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\tags;
@@ -11,6 +11,6 @@ class TagController extends Controller
     public function openTagsPage(){
         $tags = tags::all();
 
-        return view('auth.tags.index', compact('tags'));
+        return view('admin.tags.index', compact('tags'));
     }
 }

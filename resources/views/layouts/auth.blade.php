@@ -74,22 +74,7 @@
                         <li class="section-title">
                             Apps
                         </li>
-
-                        <li>
-                            <a class="sidenav-item-link" href="{{ route('auth.categories') }}">
-                                <i class="fa-solid fa-tasks"></i>
-                                <span class="nav-text">Categories</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="sidenav-item-link" href="{{ route('auth.tags') }}">
-                                <i class="fa-solid fa-tags"></i>
-                                <span class="nav-text">Tags</span>
-                            </a>
-                        </li>
-
-
+                        
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                                 data-target="#email" aria-expanded="false" aria-controls="email">
@@ -108,12 +93,7 @@
                                         </a>
                                     </li>
 
-                                    <li>
-                                        <a class="sidenav-item-link" href="{{ route('post.index') }}">
-                                            <span class="nav-text">Post</span>
-                                
-                                        </a>
-                                    </li>
+                                   
 
                                 </div>
                             </ul>

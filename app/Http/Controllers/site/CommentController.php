@@ -32,6 +32,8 @@ class CommentController extends Controller
            'post_id' => $postId,
            'user_id'=> auth()->id(),
            'comment'=>$request->comment,
+           'name' => $request->name, 
+           'email' => $request->email,
         ]);
 
         $request->session()->flash('alert-success', 'Comment added successfully');
