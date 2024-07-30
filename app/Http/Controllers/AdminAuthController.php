@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class AdminAuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('admin.dashboard')->with('success', 'Registration successful. Please login.');
+        return redirect()->route('admin.login')->with('success', 'Registration successful. Please login.');
     }
 
 
@@ -66,4 +67,3 @@ class AdminAuthController extends Controller
         return redirect()->route('admin.login')->with('success', 'You have been logged out.');
     }
 }
-

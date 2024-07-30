@@ -166,4 +166,3 @@ class AdminPostController extends Controller
         return $gallery;
     }
 }
-

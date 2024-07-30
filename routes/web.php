@@ -29,8 +29,8 @@ Route::get('/{id}', [BlogController::class, 'singleBlog'])->name('singleblog');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
-    // Route::get('register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
-    // Route::post('register', [AdminAuthController::class, 'register'])->name('register');
+    Route::get('register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('register', [AdminAuthController::class, 'register'])->name('register');
     Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AdminAuthController::class, 'login']);
     Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');

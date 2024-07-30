@@ -14,9 +14,9 @@ class AdminAuth
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next)
     {
-        if (!Auth::guard($guard)->check()) {
+        if (!Auth::guard('admin')->check()) {
             return redirect()->route('admin.login')->with('error', 'Please login to access the admin dashboard.');;
         }
     
@@ -27,4 +27,3 @@ class AdminAuth
     
 }
     
-
