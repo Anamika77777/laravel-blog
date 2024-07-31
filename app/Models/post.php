@@ -26,4 +26,7 @@ class post extends Model
     public function gallery(){
         return $this->belongsTo(gallery::class);
     }
+    public function comments(){
+        return $this->hasMany(comment::class);
+    }
 }

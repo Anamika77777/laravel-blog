@@ -34,11 +34,11 @@
 
                     <div class="blog-item-content bg-white p-3">
                         <div class="blog-item-meta bg-gray pt-2 pb-1 px-3">
-                            <span class="text-muted text-capitalize d-inline-block mr-3"><i class="ti-comment mr-2"></i>{{ isset($comments) ? count($comments) : 0 }} Comments</span>
+                            <span class="text-muted text-capitalize d-inline-block mr-3"><i class="ti-comment mr-2"></i>{{$blog->comments ? count($blog->comments): 0}} Comments</span>
                             <span class="text-black text-capitalize d-inline-block mr-3"><i class="ti-time mr-1"></i> {{ $blog->created_at->format('jS F') }}</span>
                         </div>
 
-                        <h3 class="mt-3 mb-3"><a href="{{route('singleblog', $blog->id)}}">{{Str::limit($blog->title,35)}}</a></h3>
+                        <h3 class="mt-3 mb-3"><a href="{{route('singleblog', $blog->id)}}">{{Str::limit($blog->title,24)}}</a></h3>
                         <p class="mb-4">{{Str::limit($blog->description,50)}}</p>
 
                         <a href="{{route('singleblog', $blog->id)}}" class="btn btn-small btn-main btn-round-full">Read More</a>
