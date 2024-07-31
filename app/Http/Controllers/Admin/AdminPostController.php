@@ -116,7 +116,7 @@ class AdminPostController extends Controller
         }
 
         $post->update([
-            'user_id' => Auth::guard('guardName')('admin')->user()->id,
+            'user_id' => Auth::guard('admin')->user()->id,
             'title' => $request->title,
             'description' => $request->description,
             'status' => $request->status,

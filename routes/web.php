@@ -35,6 +35,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('login', [AdminAuthController::class, 'login']);
     Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
     Route::resource('auth/post', AdminPostController::class);
+    
 
 
 
