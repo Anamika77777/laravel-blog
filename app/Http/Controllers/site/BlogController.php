@@ -12,8 +12,9 @@ class BlogController extends Controller
     public function index(){
         
         $blogs = post::where('status','=','1')->get();
-
-        return view('site.index', compact('blogs'));
+        
+        $comments = comment::all();
+        return view('site.index', compact('blogs', 'comments'));
     }
 
 
@@ -34,4 +35,6 @@ class BlogController extends Controller
 
        
     }
+
+   
 }
