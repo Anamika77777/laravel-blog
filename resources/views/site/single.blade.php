@@ -112,9 +112,6 @@
                                    @foreach ($comments as $comment)
                                    <li class="mb-5">
                                     <div class="comment-area-box">
-                                        {{-- <img loading="lazy" alt=""
-                                            src=""
-                                            class="img-fluid float-left mr-3 mt-2"> --}}
 
                                         <h5 class="mb-1">{{$comment->user ? $comment->user->name: ''}}</h5>
                                         <span>{{$comment->user ? $comment->user->email: ''}}</span>
@@ -132,7 +129,16 @@
                                     <div class="ml-5">
                                         @if ($comment->commentReplies)
                                             @foreach ($comment->commentReplies as $reply)
-                                                <p>{{$reply->comment}}</p>
+                                                {{-- <p>{{$reply->comment}}</p>
+                                                 --}}
+
+                                                 <div class="comment-area-box">
+                                                    <h5 class="mb-1">{{ $reply->user ? $reply->user->name : 'Anonymous' }}</h5>
+                                                    <span>{{ $reply->user ? $reply->user->email : '' }}</span>
+                                                    <div class="comment-content mt-3">
+                                                        <p>{{ $reply->comment }}</p>
+                                                    </div>
+                                                </div>
                                             @endforeach
                                         @endif
                                     </div>
