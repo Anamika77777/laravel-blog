@@ -28,7 +28,7 @@ class BlogController extends Controller
 
         $comments = comment::where('post_id', $blog->id)->get();
 
-        $latestPosts = post::latest()->get();
+        $latestPosts = post::where('status','1')->latest()->get();
         $postTags = $blog->tags;
 
         return view('site.single', compact('blog','comments','latestPosts','postTags'));
