@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Models;
+use App\Models\post;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class tags extends Model
 {
@@ -12,6 +14,5 @@ class tags extends Model
     protected $table = 'tags';
     protected $fillable = ['name'];
 
-    
 
 }

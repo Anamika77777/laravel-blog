@@ -177,10 +177,10 @@
 
                             @foreach ($latestPosts as $latestPost)
                             <div class="media border-bottom py-3">
-                                <a href="#"><img loading="lazy" class="mr-4" src="{{$latestPost->gallery->image}}" style="width:60px"
+                                <a href="{{route('singleblog', $latestPost->id)}}"><img loading="lazy" class="mr-4" src="{{$latestPost->gallery->image}}" style="width:60px"
                                         alt="blog"></a>
                                 <div class="media-body">
-                                    <h6 class="my-2"><a href="#">{{$latestPost->title}}</a></h6>
+                                    <h6 class="my-2"><a href="{{route('singleblog', $latestPost->id)}}">{{$latestPost->title}}</a></h6>
                                     <span class="text-sm text-muted">{{date('d M Y', strtotime($latestPost->created_at))}}</span>
                                 </div>
                             </div>
