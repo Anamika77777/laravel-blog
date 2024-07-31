@@ -128,18 +128,19 @@
 
                                     <div class="ml-5">
                                         @if ($comment->commentReplies)
+                                        <a href="javascript:void(0);" class="show-reply float-right" data-reply-id="{{ $comment->id }}">Show reply</a>
+                                        <div class="comment-replies" id="reply-{{ $comment->id }}" style="display: none;">
                                             @foreach ($comment->commentReplies as $reply)
-                                                {{-- <p>{{$reply->comment}}</p>
-                                                 --}}
-
                                                  <div class="comment-area-box">
                                                     <h5 class="mb-1">{{ $reply->user ? $reply->user->name : 'Anonymous' }}</h5>
                                                     <span>{{ $reply->user ? $reply->user->email : '' }}</span>
                                                     <div class="comment-content mt-3">
                                                         <p>{{ $reply->comment }}</p>
                                                     </div>
+                                                    
                                                 </div>
                                             @endforeach
+                                        </div>
                                         @endif
                                     </div>
 
@@ -218,6 +219,25 @@
        });
    });
 
+
+   document.addEventListener('DOMContentLoaded', function() {
+        const showReplyLinks = document.querySelectorAll('.show-reply');
+
+        showReplyLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const replyId = this.getAttribute('data-reply-id');
+                const replyContainer = document.getElementById('reply-' + replyId);
+                
+                if (replyContainer.style.display === 'none') {
+                    replyContainer.style.display = 'block';
+                    this.textContent = 'Hide reply';
+                } else {
+                    replyContainer.style.display = 'none';
+                    this.textContent = 'Show reply';
+                }
+            });
+        });
+    });
 
 </script>
 @endsection
