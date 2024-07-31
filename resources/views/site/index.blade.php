@@ -28,11 +28,11 @@
           <div class="row">
              
             @foreach ($blogs as $blog)
-            <div class="col-lg-6 col-md-6 mb-5">
+            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="blog-item">
                     <img loading="lazy" src="{{$blog->gallery->image}}" alt="blog" class="img-fluid rounded">
 
-                    <div class="blog-item-content bg-white p-5">
+                    <div class="blog-item-content bg-white p-3">
                         <div class="blog-item-meta bg-gray pt-2 pb-1 px-3">
                             <span class="text-muted text-capitalize d-inline-block mr-3"><i class="ti-comment mr-2"></i>{{ isset($comments) ? count($comments) : 0 }} Comments</span>
                             <span class="text-black text-capitalize d-inline-block mr-3"><i class="ti-time mr-1"></i> {{ $blog->created_at->format('jS F') }}</span>
