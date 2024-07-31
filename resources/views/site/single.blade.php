@@ -191,15 +191,13 @@
 
                         <div class="sidebar-widget bg-white rounded tags p-4 mb-3">
                             <h5 class="mb-4">Tags</h5>
-                            <a href="#">Web</a>
-                            <a href="#">agency</a>
-                            <a href="#">company</a>
-                            <a href="#">creative</a>
-                            <a href="#">html</a>
-                            <a href="#">Marketing</a>
-                            <a href="#">Social Media</a>
-                            <a href="#">Branding</a>
+                        @if (count($postTags)>0)
+                        @foreach ($postTags as $postTag)
+                        <a>{{$postTag->name}}</a>
+                        @endforeach
+                        @endif
                         </div>
+                            
                     </div>
                 </div>
             </div>
