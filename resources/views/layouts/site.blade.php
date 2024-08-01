@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="{{'assets/site/css/style.css'}}">
   
   <!--Favicon-->
-  <link rel="icon" href="{{'assets/site/images/favicon.png'}}" type="image/x-icon">
+  <link rel="icon" href="{{'assets/auth/images/logo.png'}}" type="image/x-icon">
 
 </head>
 

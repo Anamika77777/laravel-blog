@@ -25,11 +25,9 @@
     <link href="{{ asset('assets/auth/plugins/jvectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/auth/plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link href="{{ asset('assets/auth/plugins/toaster/toastr.min.css') }}" rel="stylesheet" />
-    <!-- MONO CSS -->
     <link id="main-css-href" rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}" />
     <!-- FAVICON -->
-    <link href="{{ asset('assets/auth/images/favicon.png') }}" rel="shortcut icon" />
+    <link href="{{ asset('assets/auth/images/logo.png') }}" rel="shortcut icon" />
     <script src="{{ asset('assets/auth/plugins/nprogress/nprogress.js') }}"></script>
     @yield('styles')
 </head>
@@ -42,14 +40,9 @@
         });
         NProgress.start();
     </script>
-    <div id="toaster"></div>
-    <!-- ====================================
-    ——— WRAPPER
-    ===================================== -->
+
+
     <div class="wrapper">
-        <!-- ====================================
-          ——— LEFT SIDEBAR WITH OUT FOOTER
-        ===================================== -->
         <aside class="left-sidebar sidebar-dark" id="left-sidebar">
             <div id="sidebar" class="sidebar sidebar-with-footer">
                 <!-- Aplication Brand -->
@@ -125,7 +118,7 @@
                             <!-- User Account -->
                             <li class="dropdown user-menu">
                                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <img src="{{ asset('assets/auth/images/user/user-xs-01.jpg') }}"
+                                    <img src="{{ asset('assets/auth/images/user/u1.png') }}"
                                         class="user-image rounded-circle" alt="User Image" />
                                     <span class="d-none d-lg-inline-block">{{ auth()->user()->name }}</span>
                                 </button>
@@ -155,15 +148,9 @@
                         </ul>
                     </div>
                 </nav>
-
-
             </header>
 
-            <!-- ====================================
-      ——— PAGE WRAPPER
-      ===================================== -->
             @yield('content')
-
 
 
             <!-- Footer -->
@@ -220,17 +207,6 @@
     <script src="{{ asset('assets/auth/js/map.js') }}"></script>
     <script src="{{ asset('assets/auth/js/custom.js') }}"></script>
     @yield('scripts')
-
-    <script>
-        // $(document).ready(function() {
-        //     $('#logut-button').click(function() 
-        //     {
-        //     consol.log('loging-out');
-        //         $('#logout-form').submit();
-        //     });
-        // });
-    </script>
-
 
 </body>
 

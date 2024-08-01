@@ -23,7 +23,7 @@
     <!-- MONO CSS -->
     <link id="main-css-href" rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}" />
     <!-- FAVICON -->
-    <link href="{{ asset('assets/auth/images/favicon.png') }}" rel="shortcut icon" />
+    <link href="{{ asset('assets/auth/images/logo.png') }}" rel="shortcut icon" />
     <script src="{{ asset('assets/auth/plugins/nprogress/nprogress.js') }}"></script>
     @yield('styles')
 </head>
@@ -33,7 +33,7 @@
         NProgress.configure({ showSpinner: false });
         NProgress.start();
     </script>
-    <div id="toaster"></div>
+
 
     <div class="wrapper">
         <aside class="left-sidebar sidebar-dark" id="left-sidebar">
@@ -118,7 +118,7 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown user-menu">
                                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <img src="{{ asset('assets/auth/images/user/user-xs-01.jpg') }}" class="user-image rounded-circle" alt="User Image" />
+                                    <img src="{{ asset('assets/auth/images/user/u1.png') }}" class="user-image rounded-circle" alt="User Image" />
                                     <span class="d-none d-lg-inline-block">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
