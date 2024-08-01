@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\Auth\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\site\BlogController;
 use App\Http\Controllers\site\CommentController;
 use App\Http\Controllers\site\ReplyCommentController;
@@ -24,7 +25,8 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/', [BlogController::class, 'index'])->name('index');
+Route::get('blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/{id}', [BlogController::class, 'singleBlog'])->name('singleblog');
 
 

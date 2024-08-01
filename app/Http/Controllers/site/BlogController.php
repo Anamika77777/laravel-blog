@@ -14,7 +14,7 @@ class BlogController extends Controller
         $blogs = post::where('status','=','1')->get();
         
         $comments = comment::all();
-        return view('site.index', compact('blogs', 'comments'));
+        return view('site.blog', compact('blogs', 'comments'));
     }
 
 

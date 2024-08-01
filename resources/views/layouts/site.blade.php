@@ -74,6 +74,9 @@
                 <li class="nav-item @@home">
                   <a class="nav-link" href="{{url('/')}}">Home</a>
                 </li>
+                <li class="nav-item @@home">
+                  <a class="nav-link" href="{{url('/blog')}}">Blog</a>
+                </li>
                 <li class="nav-item @@contact"><a class="nav-link" href="{{route('login')}}">Login</a></li>
                 <li class="nav-item @@contact"><a class="nav-link" href="{{route('register')}}">Register</a></li>
               </ul>
@@ -184,7 +187,7 @@ Essential Scripts
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="{{'assets/site/plugins/google-map/map.js'}}" defer></script>
 
-<script src="{'assets/site/js/script.js'}}"></script>
+<script src="{{'assets/site/js/script.js'}}"></script>
 
 @yield('scripts')
 
