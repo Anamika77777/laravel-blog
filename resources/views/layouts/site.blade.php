@@ -61,7 +61,7 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg px-0 py-4">
             <a class="navbar-brand" href="{{url('/')}}">
-              Mega<span>kit.</span>
+              An<span>sev.</span>
             </a>
       
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
