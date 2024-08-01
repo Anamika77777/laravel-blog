@@ -70,7 +70,7 @@ namespace App\Http\Controllers\Auth;
               }
               DB::commit();
 
-              Session::flash('alert-success', 'Your post has been created successfully!');
+              Session::flash('alert-success', 'Your post has been created successfully and will be available once it has been approved by an admin.');
 
               return redirect()->route('post.index')->with('success', 'Post created successfully');
           } catch (\Exception $ex) {

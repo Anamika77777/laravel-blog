@@ -36,11 +36,35 @@ class CommentController extends Controller
            'email' => $request->email,
         ]);
 
-        $request->session()->flash('alert-success', 'Comment added successfully');
+        $request->session()->flash('alert-success', 'Your comment has been posted successfully and will be visible once approved by an admin.');
     }
     return back();
 
 
+}
+
+
+
+public function adminIndex()
+{
+    $comments = comment::where('status', 'pending')->get();
+    return view('admin.comment', compact('comments'));
+}
+
+public function approve(Comment $comment)
+{
+    $comment->status = 'approved';
+    $comment->save();
+
+    return redirect()->back()->with('message', 'Comment approved.');
+}
+
+public function reject(Comment $comment)
+{
+    $comment->status = 'rejected';
+    $comment->save();
+
+    return redirect()->back()->with('message', 'Comment rejected.');
 }
 
 }

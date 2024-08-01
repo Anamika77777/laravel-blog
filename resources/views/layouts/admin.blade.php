@@ -94,7 +94,12 @@
                             </ul>
                         </li>
 
-                    
+                        <li>
+                            <a class="sidenav-item-link" href="{{ route('admin.comments') }}">
+                                <i class="fa-solid fa-comment"></i>
+                                <span class="nav-text">Comments</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

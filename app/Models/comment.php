@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class comment extends Model
 {
@@ -25,6 +26,19 @@ class comment extends Model
     {
       return $this->hasMany(comment_replies::class);
     }
+
+
+    public function store(Request $request)
+{
+    $comment = new Comment();
+    $comment->user_id = auth()->id();
+    $comment->post_id = $request->post_id;
+    $comment->comment = $request->comment;
+    $comment->status = 'pending';
+    $comment->save();
+
+    return redirect()->back()->with('message', 'Your comment is awaiting approval.');
+}
 
 
 }

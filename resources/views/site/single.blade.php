@@ -107,9 +107,9 @@
                         @if (count($comments)>0)
                         <div class="col-lg-12 mb-5">
                             <div class="comment-area card border-0 p-5">
-                                <h4 class="mb-4">{{count($comments)}} Comments</h4>
+                                <h4 class="mb-4">{{ count($comments->where('status', 'approved')) }} Comments</h4>
                                 <ul class="comment-tree list-unstyled">
-                                   @foreach ($comments as $comment)
+                                    @foreach ($comments->where('status', 'approved') as $comment)
                                    <li class="mb-5">
                                     <div class="comment-area-box">
 
