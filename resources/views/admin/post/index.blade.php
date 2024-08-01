@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     @if (count($posts) > 0)
-                        <table class="table" id="posts">
+                        <table class="table" id="post">
                             <thead>
                                 <tr>
                                     <th scope="col">Image</th>
@@ -75,6 +75,7 @@
 @endsection
 
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hotkeys/0.2.0/jquery.hotkeys.min.js"></script>
 <script src="{{ asset('assets/auth/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
 <script>
 $(document).ready(function(){
