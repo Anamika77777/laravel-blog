@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-body">
                     @if (count($posts) > 0)
-                        <table class="table" id="post">
+                        <table class="table" id="Tablepost">
                             <thead>
                                 <tr>
                                     <th scope="col">Image</th>
@@ -51,7 +51,12 @@
                                         <td>{{ \Illuminate\Support\Str::limit($post->description, 15, '...') }}</td>
                                         <td>{{ $post->category->name }}</td>
                                         <td>{{ $post->user->name }}</td>
-                                        <td>{{ $post->status == 1 ? 'Active' : 'Inactive' }}</td>
+                                        <td>
+                                            <select class="form-control status-select" data-id="{{ $post->id }}">
+                                                <option value="1" {{ $post->status == 1 ? 'selected' : '' }}>Active</option>
+                                                <option value="0" {{ $post->status == 0 ? 'selected' : '' }}>Inactive</option>
+                                            </select>
+                                        </td>
                                         <td id="outer">
                                             <a href="{{ route('admin.post.show', $post->id) }}"><i class="bi bi-eye-fill inner"></i></a>
                                             <a href="{{ route('admin.post.edit', $post->id) }}"><i class="bi bi-pencil-fill inner"></i></a>
@@ -75,11 +80,35 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hotkeys/0.2.0/jquery.hotkeys.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{ asset('assets/auth/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
 <script>
 $(document).ready(function(){
-  $('#post').DataTable();
+  $('#Tablepost').DataTable();
+
+  $('.status-select').on('change', function(){
+      var postId = $(this).data('id');
+      var status = $(this).val();
+      
+      console.log('Changing status of post ID: ' + postId + ' to ' + status);
+
+      $.ajax({
+          url: '/admin/post/' + postId + '/status',
+          method: 'PATCH',
+          data: {
+              _token: '{{ csrf_token() }}',
+              status: status
+          },
+          success: function(response) {
+              console.log(response);
+              alert('Status updated successfully!');
+          },
+          error: function(response) {
+              console.log(response);
+              alert('Failed to update status.');
+          }
+      });
+  });
 });
 </script>
 @endsection

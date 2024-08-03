@@ -16,13 +16,12 @@ use Illuminate\Support\Facades\Session;
 
 class AdminPostController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = post::all();
+        $posts = Post::all();
         return view('admin.post.index', compact('posts'));
     }
 
@@ -31,9 +30,9 @@ class AdminPostController extends Controller
      */
     public function create()
     {
-        $categories = category::all();
-        $tags = tags::all();
-        return view('admin.post.create', compact('categories','tags'));
+        $categories = Category::all();
+        $tags = Tags::all();
+        return view('admin.post.create', compact('categories', 'tags'));
     }
 
     /**
@@ -149,6 +148,20 @@ class AdminPostController extends Controller
         return to_route('admin.post.index');
     }
 
+    /**
+     * Update the status of the specified post.
+     */
+    public function updateStatus(Request $request, $id)
+    {
+        $post = Post::find($id);
+        if ($post) {
+            $post->status = $request->status;
+            $post->save();
+            return response()->json(['success' => 'Status updated successfully!']);
+        }
+        return response()->json(['error' => 'Post not found.'], 404);
+    }
+
     private function uploadFile($file)
     {
         $fileName = rand(100, 1000) . time() . $file->getClientOriginalName();
@@ -159,7 +172,7 @@ class AdminPostController extends Controller
 
     private function storeImage($fileName)
     {
-        $gallery = gallery::create([
+        $gallery = Gallery::create([
             'image' => $fileName,
             'type' => Gallery::POST_IMAGE,
         ]);

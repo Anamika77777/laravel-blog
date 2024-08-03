@@ -46,6 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('posts', AdminPostController::class);
         Route::get('categories', [CategoryController::class, 'openCategoriesPage'])->name('categories');
         Route::get('tags', [TagController::class, 'openTagsPage'])->name('tags');
+        Route::patch('post/{post}/status', [AdminPostController::class, 'updateStatus'])->name('post.updateStatus');
         
         Route::get('/admin/comments', [CommentController::class, 'adminIndex'])->name('comments');
         Route::post('/admin/comments/{comment}/approve', [CommentController::class, 'approve'])->name('comments.approve');
