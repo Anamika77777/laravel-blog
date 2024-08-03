@@ -167,10 +167,10 @@
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <div class="sidebar-wrap">
-                        <div class="sidebar-widget search card p-4 mb-3 border-0">
+                        {{-- <div class="sidebar-widget search card p-4 mb-3 border-0">
                             <input type="text" class="form-control" placeholder="search">
                             <a href="#" class="btn btn-mian btn-small d-block mt-2">search</a>
-                        </div>
+                        </div> --}}
 
                         @if (count($latestPosts)>0)
                         <div class="sidebar-widget latest-post card border-0 p-4 mb-3">

@@ -77,22 +77,18 @@
                             <ul class="collapse" id="email" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
 
-
-
                                     <li>
                                         <a class="sidenav-item-link" href="{{ route('post.create') }}">
                                             <span class="nav-text">Create Post</span>
-
                                         </a>
                                     </li>
+
                                     <li>
                                         <a class="sidenav-item-link" href="{{ route('post.index') }}">
                                             <span class="nav-text">Post</span>
-                                
                                         </a>
                                     </li>
                                    
-
                                 </div>
                             </ul>
                         </li>

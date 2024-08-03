@@ -1,6 +1,13 @@
 @extends('layouts.auth')
 @section('title','Dashboard')
 
+@section('styles')
+<link rel="stylesheet" href="{{'assets/auth/vendor/owl-carousel/css/owl.carousel.min.css'}}">
+<link rel="stylesheet" href="{{'assets/auth/vendor/owl-carousel/css/owl.theme.default.min.css'}}">
+<link href="{{'assets/auth/vendor/jqvmap/css/jqvmap.min.css'}}" rel="stylesheet">
+<link href="{{'assets/auth/cssbar/style.css'}}" rel="stylesheet">
+@endsection
+
 @section('content')
 
   <div class="content-wrapper">
@@ -18,6 +25,21 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-xl-8 col-lg-8 col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Posts Overview</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-8">
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
        
         <!-- Stock Modal -->
@@ -141,4 +163,36 @@
           </div>
         </div>
 </div>
+@endsection
+
+@section('scripts')
+     <!-- Required vendors -->
+     <script src="./js/quixnav-init.js"></script>
+     <script src="./js/custom.min.js"></script>
+ 
+ 
+     <!-- Vectormap -->
+     <script src="{{'assets/auth/vendor/raphael/raphael.min.js'}}"></script>
+     <script src="{{'assets/auth/vendor/morris/morris.min.js'}}"></script>
+ 
+ 
+     <script src="{{'assets/auth/vendor/circle-progress/circle-progress.min.js'}}"></script>
+     <script src="{{'assets/auth/vendor/chart.js/Chart.bundle.min.js'}}"></script>
+ 
+     <script src="{{'assets/auth/vendor/gaugeJS/dist/gauge.min.js'}}"></script>
+ 
+     <!--  flot-chart js -->
+     <script src="{{'assets/auth/vendor/flot/jquery.flot.js'}}"></script>
+     <script src="{{'assets/auth/vendor/flot/jquery.flot.resize.js'}}"></script>
+ 
+     <!-- Owl Carousel -->
+     <script src="{{'assets/auth/vendor/owl-carousel/js/owl.carousel.min.js'}}"></script>
+ 
+     <!-- Counter Up -->
+     <script src="{{'assets/auth/vendor/jqvmap/js/jquery.vmap.min.js'}}"></script>
+     <script src="{{'assets/auth/vendor/jqvmap/js/jquery.vmap.usa.js'}}"></script>
+     <script src="{{'assets/auth/vendor/jquery.counterup/jquery.counterup.min.js'}}"></script>
+ 
+ 
+     <script src="{{'assets/auth/jsbar/dashboard/dashboard-1.js'}}"></script>
 @endsection

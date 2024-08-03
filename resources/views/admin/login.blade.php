@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +24,7 @@
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
-                            <div>
+                            <div class="error-message mt-3">
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -31,11 +36,11 @@
                             @csrf
                             <div>
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
+                                <input type="text" class="form-control" name="email" id="email">
                             </div>
                             <div>
                                 <label for="password">Password:</label>
-                                <input type="password" class="form-control" name="password" id="password" required>
+                                <input type="password" class="form-control" name="password" id="password">
                             </div>
                             <button class="btn btn-primary btn-block mt-3" type="submit">Login</button>
                         </form>
