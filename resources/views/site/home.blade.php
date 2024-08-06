@@ -7,8 +7,8 @@
           <div class="row">
               <div class="col-lg-9 col-md-10">
                   <div class="block">
-                      <span class="d-block mb-3 text-white text-capitalize">Prepare for new future</span>
-                      <h1 class="animated fadeInUp mb-5">Our work is <br>presentation of our <br>capabilities.</h1>
+                      <span class="d-block mb-3 text-white text-capitalize">Welcome to Ansev</span>
+                      <h1 class="animated fadeInUp mb-5">where imagination  <br>meets <br> inspiration! </h1>
                       <a href="#"  class="btn btn-main animated fadeInUp btn-round-full" aria-label="Get started">Get started<i class="btn-icon fa fa-angle-right ml-2"></i></a>
                   </div>
               </div>
@@ -23,7 +23,7 @@
               <div class="col-lg-8">
                   <div class="section-title">
                       <span class="h6 text-color ">We are creative & expert people</span>
-                      <h2 class="mt-3 content-title">We work with business & provide solution to client with their business problem
+                      <h2 class="mt-3 content-title">We work with bloggers to provide solutions for their content and growth
                       </h2>
                   </div>
               </div>
@@ -33,21 +33,21 @@
                   <div class="intro-item mb-5 mb-lg-0">
                       <i class="ti-desktop color-one"></i>
                       <h4 class="mt-4 mb-3">Modern & Responsive design</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+                      <p>Design beautiful, responsive blog layouts that captivate your audience and enhance readability. Our designs ensure your content shines on any device.</p>
                   </div>
               </div>
               <div class="col-lg-4 col-md-6">
                   <div class="intro-item mb-5 mb-lg-0">
                       <i class="ti-medall color-one"></i>
-                      <h4 class="mt-4 mb-3">Awarded licensed company</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+                      <h4 class="mt-4 mb-3">Award-Winning Expertise</h4>
+                      <p>Leverage the experience and insights of an award-winning team. We’ve been recognized for our exceptional work in the blogging and content creation industry.</p>
                   </div>
               </div>
               <div class="col-lg-4 col-md-12">
                   <div class="intro-item">
                       <i class="ti-layers-alt color-one"></i>
-                      <h4 class="mt-4 mb-3">Build your website Professionally</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, ducimus.</p>
+                      <h4 class="mt-4 mb-3">Professional Blogging Services</h4>
+                      <p>From SEO optimization to engaging content creation, we provide comprehensive services to elevate your blog. Build your online presence with expert support and grow your readership professionally.</p>
                   </div>
               </div>
           </div>
@@ -67,8 +67,7 @@
                       <h2 class="mt-3 mb-4 position-relative content-title">We are dynamic team of creative people</h2>
                       <div class="about-content">
                           <h4 class="mb-3 position-relative">We are Perfect Solution</h4>
-                          <p class="mb-5">We provide consulting services in the area of IFRS and management reporting, helping
-                              companies to reach their highest level. We optimize business processes, making them easier.</p>
+                          <p class="mb-5">We provide comprehensive support in the world of blogging, helping writers and content creators reach their highest potential. From content strategy to SEO optimization, we streamline your blogging journey, making it easier and more effective.</p>
   
                           <a href="#" class="btn btn-main btn-round-full">Get started</a>
                       </div>
@@ -127,48 +126,48 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5">
                       <i class="ti-desktop"></i>
-                      <h4 class="mb-3">Web development.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">Content Creation</h4>
+                      <p>We offer high-quality, engaging content tailored to your audience. Our team of experienced writers can help you create blog posts, articles, and other written materials that resonate with your readers and keep them coming back for more.</p>
                   </div>
               </div>
   
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5">
                       <i class="ti-layers"></i>
-                      <h4 class="mb-3">Interface Design.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">SEO Optimization</h4>
+                      <p>Improve your blog's visibility on search engines with our SEO services. We use the latest techniques and strategies to ensure your content ranks higher and attracts more organic traffic.</p>
                   </div>
               </div>
   
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5">
                       <i class="ti-bar-chart"></i>
-                      <h4 class="mb-3">Business Consulting.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">Social Media Management</h4>
+                      <p>Expand your reach and engage with your audience on social media platforms. We manage your social media accounts, create engaging posts, and interact with your followers to build a strong online presence.</p>
                   </div>
               </div>
   
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5 mb-lg-0">
                       <i class="ti-vector"></i>
-                      <h4 class="mb-3">Branding.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">Graphic Design</h4>
+                      <p>Make your blog visually appealing with our graphic design services. From custom graphics and infographics to blog headers and social media images, we create visually stunning content that captures attention.</p>
                   </div>
               </div>
   
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5 mb-lg-0">
                       <i class="ti-android"></i>
-                      <h4 class="mb-3">App development.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">Content Strategy</h4>
+                      <p>Develop a comprehensive content strategy that aligns with your goals. We help you plan your content calendar, brainstorm topics, and create a cohesive strategy to grow your blog and engage your audience.</p>
                   </div>
               </div>
   
               <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="service-item mb-5 mb-lg-0">
                       <i class="ti-pencil-alt"></i>
-                      <h4 class="mb-3">Content creation.</h4>
-                      <p>A digital agency isn't here to replace your internal team, we're here to partner</p>
+                      <h4 class="mb-3">Analytics and Reporting</h4>
+                      <p>Track your blog's performance with our analytics and reporting services. We provide detailed reports on your blog's traffic, audience engagement, and other key metrics to help you make informed decisions.</p>
                   </div>
               </div>
           </div>
@@ -270,7 +269,7 @@
                 @if (count($latestPosts) > 0)
                 <div class="section-title">
                     <span class="h6 text-color">Latest Blog</span>
-                    <h2 class="mt-3 content-title text-white">Latest articles to enrich knowledge</h2>
+                    <h2 class="mt-3 content-title text-white">Latest Blogs to enrich knowledge</h2>
                 </div>
             </div>
         </div>
