@@ -36,14 +36,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AdminAuthController::class, 'login']);
     Route::post('logout', [AdminAuthController::class, 'logout'])->name('logout');
-    Route::resource('auth/post', AdminPostController::class);
     
-
-
 
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-        Route::resource('posts', AdminPostController::class);
+        Route::resource('auth/post', AdminPostController::class);
         Route::get('categories', [CategoryController::class, 'openCategoriesPage'])->name('categories');
         Route::get('tags', [TagController::class, 'openTagsPage'])->name('tags');
         Route::patch('post/{post}/status', [AdminPostController::class, 'updateStatus'])->name('post.updateStatus');
