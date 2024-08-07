@@ -60,7 +60,7 @@
                                         <td id="outer">
                                             <a href="{{ route('admin.post.show', $post->id) }}"><i class="bi bi-eye-fill inner"></i></a>
                                             <a href="{{ route('admin.post.edit', $post->id) }}"><i class="bi bi-pencil-fill inner"></i></a>
-                                            <form method="POST" action="{{ route('admin.post.destroy', $post->id) }}" class="inner">
+                                            <form method="POST" action="{{ route('admin.post.destroy', $post->id) }}" class="inner delete-form">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"><i class="bi bi-trash"></i></button>
@@ -85,6 +85,15 @@
 <script>
 $(document).ready(function(){
   $('#Tablepost').DataTable();
+
+  $('.delete-form').on('submit', function(e) {
+    var form = this;
+    e.preventDefault();
+    var confirmDialog = confirm('Are you sure you want to delete this post?');
+    if (confirmDialog) {
+      form.submit();
+    }
+  });
 
   $('.status-select').on('change', function(){
       var postId = $(this).data('id');
