@@ -52,7 +52,7 @@
                             <tbody>
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td><img src="{{ asset('storage/auth/posts/'). '/' .$post->gallery->image }}" alt="Post Image" style="width:80px; height:40px"></td>
+                                        <td><img src="{{ $post->gallery->image}}" alt="Post Image" style="width:80px; height:40px"></td>
                                         <td>{{ \Illuminate\Support\Str::limit($post->title, 15, '...') }}</td>
                                         <td>{{ \Illuminate\Support\Str::limit($post->description, 15, '...') }}</td>
                                         <td>{{ $post->category->name }}</td>
@@ -61,7 +61,7 @@
                                         <td class="outer">
                                             <a href="{{route('post.show', $post->id)}}"><i class="bi bi-eye-fill inner"></i></a>
                                             <a href="{{route('post.edit', $post->id)}}"><i class="bi bi-pencil-fill inner"></i></a>
-                                            <form method="POST" action="{{route('post.destroy', $post->id)}}" class="inner">
+                                            <form method="POST" action="{{route('post.destroy', $post->id)}}" class="inner delete-form">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"><i class="bi bi-trash"></i> </button>
@@ -90,6 +90,14 @@
 <script>
 $(document).ready(function(){
   $('#posts').DataTable();
+  $('.delete-form').on('submit', function(e) {
+    var form = this;
+    e.preventDefault();
+    var confirmDialog = confirm('Are you sure you want to delete this post?');
+    if (confirmDialog) {
+      form.submit();
+    }
+  });
 });
 </script>
 @endsection

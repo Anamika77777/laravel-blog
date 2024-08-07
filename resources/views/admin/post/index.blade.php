@@ -46,7 +46,7 @@
                             <tbody>
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td><img src="{{ asset('storage/auth/posts/' . $post->gallery->image) }}" alt="Post Image" style="width:80px; height:40px"></td>
+                                        <td><img src="{{$post->gallery->image }}" alt="Post Image" style="width:80px; height:40px"></td>
                                         <td>{{ \Illuminate\Support\Str::limit($post->title, 15, '...') }}</td>
                                         <td>{{ \Illuminate\Support\Str::limit($post->description, 15, '...') }}</td>
                                         <td>{{ $post->category->name }}</td>

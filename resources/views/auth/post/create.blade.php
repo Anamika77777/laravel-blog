@@ -37,13 +37,13 @@
                                 placeholder="Description"></textarea>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>Status</label>
                             <select name="status" class="form-control">
                                 <option value="" disabled selected>Choose Option</option>
                                 <option value="0">Draft</option>
                             </select>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label>Category</label>

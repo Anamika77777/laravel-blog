@@ -10,8 +10,11 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
+
         
-        $blogs = post::where('status','=','1')->get();
+        $blogs = post::where('status', '1')
+             ->orderBy('created_at', 'desc')
+             ->get();
         
         $comments = comment::all();
         return view('site.blog', compact('blogs', 'comments'));
