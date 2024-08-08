@@ -40,5 +40,10 @@ class comment extends Model
     return redirect()->back()->with('message', 'Your comment is awaiting approval.');
 }
 
+public function post()
+{
+    return $this->belongsTo(post::class);
+}
+
 
 }

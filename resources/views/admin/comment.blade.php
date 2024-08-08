@@ -9,6 +9,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Blog Title</th>
                 <th>Comment</th>
                 <th>User</th>
                 <th>Actions</th>
@@ -17,6 +18,7 @@
         <tbody>
             @foreach ($comments as $comment)
             <tr>
+                <td>{{ $comment->post->title ?? 'N/A' }}</td> <!-- Display the blog title -->
                 <td>{{ $comment->comment }}</td>
                 <td>{{ $comment->user->name }}</td>
                 <td>
@@ -35,6 +37,3 @@
     </table>
 </div>
 @endsection
-
-
-

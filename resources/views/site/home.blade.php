@@ -9,7 +9,7 @@
                   <div class="block">
                       <span class="d-block mb-3 text-white text-capitalize">Welcome to Ansev</span>
                       <h1 class="animated fadeInUp mb-5">where imagination  <br>meets <br> inspiration! </h1>
-                      <a href="#"  class="btn btn-main animated fadeInUp btn-round-full" aria-label="Get started">Get started<i class="btn-icon fa fa-angle-right ml-2"></i></a>
+                      <a href="{{route('post.create')}}"  class="btn btn-main animated fadeInUp btn-round-full" aria-label="Get started">Get started<i class="btn-icon fa fa-angle-right ml-2"></i></a>
                   </div>
               </div>
           </div>
@@ -69,7 +69,7 @@
                           <h4 class="mb-3 position-relative">We are Perfect Solution</h4>
                           <p class="mb-5">We provide comprehensive support in the world of blogging, helping writers and content creators reach their highest potential. From content strategy to SEO optimization, we streamline your blogging journey, making it easier and more effective.</p>
   
-                          <a href="#" class="btn btn-main btn-round-full">Get started</a>
+                          <a href="{{route('post.create')}}" class="btn btn-main btn-round-full">Get started</a>
                       </div>
                   </div>
               </div>
