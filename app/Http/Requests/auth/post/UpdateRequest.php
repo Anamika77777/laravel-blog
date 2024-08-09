@@ -25,7 +25,6 @@ class UpdateRequest extends FormRequest
             'file' =>'nullable|image|mimes:png,jpg',
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:3000',
-            'status' => 'required|integer',
             'category' => 'required|integer',
             'tags' => 'required|array',
             'tags.*' => 'required|string',
