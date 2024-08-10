@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Auth;
   use App\Http\Controllers\Controller;
   use App\Http\Requests\auth\post\CreateRequest;
   use App\Http\Requests\Auth\post\UpdateRequest;
-  use App\Models\category;
+use App\Models\Admin;
+use App\Models\category;
   use App\Models\gallery;
   use App\Models\post;
   use App\Models\tags;
-  use Illuminate\Http\Request;
+use App\Models\User;
+use App\Notifications\BlogPostCreated;
+use Illuminate\Http\Request;
   use Illuminate\Support\Facades\DB;
   use Illuminate\Support\Facades\Session;
 
@@ -67,6 +70,10 @@ namespace App\Http\Controllers\Auth;
 
               foreach ($request->tags as $tag) {
                   $post->tags()->attach($tag);
+              }
+              $admins = Admin::all();
+              foreach ($admins as $admin) {
+                  $admin->notify(new BlogPostCreated($post));
               }
               DB::commit();
 
@@ -149,6 +156,7 @@ namespace App\Http\Controllers\Auth;
           foreach ($request->tags as $tag) {
               $post->tags()->attach($tag);
           }
+        //   $post->notify(new BlogPostCreated($post));
           Session::flash('alert-success', 'Your post has been Updated successfully!');
           return to_route('post.index');
       }

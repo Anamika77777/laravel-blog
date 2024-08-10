@@ -12,6 +12,9 @@ use App\Http\Controllers\site\BlogController;
 use App\Http\Controllers\site\CommentController;
 use App\Http\Controllers\site\ReplyCommentController;
 use App\Models\Admin;
+use App\Models\post;
+use App\Models\User;
+use App\Notifications\BlogPostCreated;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 

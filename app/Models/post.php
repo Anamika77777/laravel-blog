@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class post extends Model
 {
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = ['gallery_id','user_id','category_id','title','description', 'status'];
 
