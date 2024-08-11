@@ -122,18 +122,31 @@
                         <ul class="nav navbar-nav">
 
                             @php
-                            $notifications = auth()->user()->notifications;
+                             $unreadCount = auth()->guard('admin')->user()->unreadNotifications->count();
+                            $notifications = auth()->guard('admin')->user()->notifications;
                         @endphp
                         
                         <li class="custom-dropdown">
                             <a href="#" class="notify-toggler custom-dropdown-toggler" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                 <i class="mdi mdi-bell-outline icon"></i>
-                                <span class="badge badge-xs rounded-circle">{{ $notifications->count() }}</span>
+                                <span class="badge badge-xs rounded-circle">{{ $unreadCount }}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-right" style="width: 300px;">
-                                <li class="dropdown-header">Notifications</li>
+                            <ul class="dropdown-menu dropdown-menu-right" style="width: 400px; max-height: 400px; overflow-y: auto;">
+                                <li class="dropdown-header">
+                                   <h5 style="display: inline">Notifications</h5> 
+                                 <h6 class="float-right"><a href="{{route('admin.markAsRead')}}">Mark all as read</a></h6> 
+                                </li>
                                 <li class="divider"></li>
-                                @foreach (auth()->guard('admin')->user()->notifications as $notification)
+                                @foreach (auth()->guard('admin')->user()->unreadnotifications as $notification)
+                                    <li class="notification-item {{ $notification->read_at ? '' : 'bg-light' }}" style="padding: 10px;">
+                                        <a href="{{route('admin.post.index')}}" style="text-decoration: none; color: inherit;">
+                                            <div class="notification-message">{{ $notification->data['message'] }}</div>
+                                            <div class="text-muted small">{{ $notification->created_at->diffForHumans() }}</div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                @endforeach
+                                @foreach (auth()->guard('admin')->user()->readnotifications as $notification)
                                     <li class="notification-item {{ $notification->read_at ? '' : 'bg-light' }}" style="padding: 10px;">
                                         <a href="{{route('admin.post.index')}}" style="text-decoration: none; color: inherit;">
                                             <div class="notification-message">{{ $notification->data['message'] }}</div>

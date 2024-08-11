@@ -7,12 +7,10 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-//     public function markAsRead($id)
-// {
-//     $notification = auth()->guard('admin')->user()->notifications()->findOrFail($id);
-//     $notification->markAsRead();
+    public function markAsRead(){
+        auth()->guard('admin')->user()->unreadnotifications->markAsRead();
+        return redirect()->back();
+    }
 
-//     return redirect()->back();
-// }
 
 }
